@@ -13,7 +13,7 @@ function NursePortal() {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/patients');
+      const response = await axios.get('https://medimate-backend-production.up.railway.app/api/patients');
       setPatients(response.data);
     } catch (error) {
       console.error('Error fetching patients:', error);

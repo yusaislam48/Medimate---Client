@@ -16,7 +16,7 @@ function MedicineSlots() {
 
   const fetchMedicines = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/medicines');
+      const response = await axios.get('https://medimate-backend-production.up.railway.app/api/medicines');
       setMedicines(response.data);
     } catch (error) {
       console.error('Error fetching medicines:', error);
@@ -25,7 +25,7 @@ function MedicineSlots() {
 
   const fetchSlots = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/slots');
+      const response = await axios.get('https://medimate-backend-production.up.railway.app/api/slots');
       setSlots(response.data);
       // Initialize used medicines
       const used = new Set();
@@ -85,7 +85,7 @@ function MedicineSlots() {
   const saveSlots = async () => {
     setSaving(true);
     try {
-      const response = await axios.post('http://localhost:5005/api/slots', { slots });
+      const response = await axios.post('https://medimate-backend-production.up.railway.app/api/slots', { slots });
       alert('Slots updated successfully');
       setSlots(response.data.slots);
       // Update used medicines after saving

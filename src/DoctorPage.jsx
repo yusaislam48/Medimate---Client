@@ -16,7 +16,7 @@ function DoctorPage() {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/patients');
+      const response = await axios.get('https://medimate-backend-production.up.railway.app/api/patients');
       setPatients(response.data);
     } catch (error) {
       console.error('Error fetching patients:', error);
@@ -25,7 +25,7 @@ function DoctorPage() {
 
   const fetchMedicines = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/api/medicines');
+      const response = await axios.get('https://medimate-backend-production.up.railway.app/api/medicines');
       setMedicines(response.data);
     } catch (error) {
       console.error('Error fetching medicines:', error);
@@ -35,7 +35,7 @@ function DoctorPage() {
   const fetchPrescriptions = async (patientId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5005/api/patients/${patientId}/prescriptions`
+        `https://medimate-backend-production.up.railway.app/api/patients/${patientId}/prescriptions`
       );
       if (response.data.length > 0) {
         setPrescriptions(response.data);
@@ -79,7 +79,7 @@ function DoctorPage() {
     }
 
     try {
-      await axios.post('http://localhost:5005/api/prescriptions', {
+      await axios.post('https://medimate-backend-production.up.railway.app/api/prescriptions', {
         patientId: selectedPatientId,
         prescriptions,
       });

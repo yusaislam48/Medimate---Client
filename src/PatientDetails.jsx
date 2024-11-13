@@ -16,7 +16,7 @@ function PatientDetails() {
 
   const fetchPatient = async () => {
     try {
-      const response = await axios.get(`http://localhost:5005/api/patients/${id}`);
+      const response = await axios.get(`https://medimate-backend-production.up.railway.app/api/patients/${id}`);
       setPatient(response.data);
     } catch (error) {
       console.error('Error fetching patient:', error);
@@ -25,7 +25,7 @@ function PatientDetails() {
 
   const fetchPrescriptions = async () => {
     try {
-      const response = await axios.get(`http://localhost:5005/api/patients/${id}/prescriptions`);
+      const response = await axios.get(`https://medimate-backend-production.up.railway.app/api/patients/${id}/prescriptions`);
       setPrescriptions(response.data);
     } catch (error) {
       console.error('Error fetching prescriptions:', error);

@@ -21,7 +21,7 @@ function PatientRegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5005/api/patients', patient);
+      const response = await axios.post('https://medimate-backend-production.up.railway.app/api/patients', patient);
       alert(response.data.message);
       // Reset form
       setPatient({

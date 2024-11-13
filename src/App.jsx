@@ -6,6 +6,8 @@ import PatientRegistrationForm from './PatientRegistrationForm';
 import PatientList from './PatientList';
 import DoctorPage from './DoctorPage'; // Import the DoctorPage component
 import PatientDetails from './PatientDetails';
+import MedicineSlots from './MedicineSlots'; 
+import NursePortal from './NursePortal';
 
 function App() {
   return (
@@ -44,6 +46,16 @@ function App() {
                   Doctor Portal
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/nurse">
+                  Nurse Portal
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/slots">
+                  Medicine Slots
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -56,7 +68,8 @@ function App() {
         <Route path="/doctor" element={<DoctorPage />} /> {/* Add this route */}
         <Route path="/patients/:id" element={<PatientDetails />} />
         <Route path="/patients/:id" element={<PatientDetails />} />
-        
+        <Route path="/slots" element={<MedicineSlots />} />
+        <Route path="/nurse" element={<NursePortal />} />
       </Routes>
     </div>
   );
